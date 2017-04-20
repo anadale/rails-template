@@ -1,0 +1,22 @@
+sqlite3: &sqlite3
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *sqlite3
+  database: db/development.sqlite3
+
+test:
+  <<: *sqlite3
+  database: db/test.sqlite3
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: <%%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%%= ENV.fetch('DB_USERNAME', 'postgres') %>
+  password: <%%= ENV.fetch('DB_PASSWORD', '') %>
+  host: <%%= ENV.fetch('DB_SERVER_HOST', 'db') %>
+  port: <%%= ENV.fetch('DB_SERVER_PORT', '5432') %>
+  database: <%= app_name %>

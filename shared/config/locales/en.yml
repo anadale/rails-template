@@ -1,0 +1,4 @@
+ru:
+  d_a_r:
+    destroy:
+      default: 'Model %{model} removed'

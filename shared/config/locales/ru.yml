@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    errors:
+      messages:
+        empty: 'Поле не может быть пустым'
+        blank: 'Поле не может быть пустым'
+  d_a_r:
+    destroy:
+      default: 'Модель %{model} успешна удалена'
